@@ -1,0 +1,91 @@
+.Sidebar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 250px;
+  background: #fff;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border-left: 10px solid #d33333;
+  box-shadow: 0px 5px 25px rbga(0,0,0, 0.1);
+}
+
+.Sidebar ul {
+  padding: 0;
+}
+
+.NavigationItem {
+  width: 100%;
+  list-style-type: none;
+  display: block;
+}
+
+.NavigationItem a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+}
+
+.Icon {
+  display: block;
+  padding: 0 10px;
+  color: #cfcfcf;
+}
+
+.Label {
+  color: #cfcfcf;
+  padding: 0px 10px;
+  margin: auto 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.NavigationItem a:hover {
+  background: #cfcfcf;
+  border-radius: 1000px;
+}
+
+.NavigationItem a:hover .Icon, 
+.NavigationItem a:hover .Label,
+.NavigationItem a:hover .Link {
+  color: #333;
+}
+
+.NavigationItem a.active {
+  background: #d33333;
+  border-radius: 1000px;
+}
+
+.NavigationItem a.active .Icon,
+.NavigationItem a.active .Label {
+  color: #fff;
+}
+
+
+.NavigationItemLv2 {
+  display: block;
+  padding-left: 40px;
+}
+
+.Link {
+  color: #cfcfcf;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+}
+
+.LabelLv2 {
+  margin: auto 0;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.NavigationItemLv2 a.active .Link {
+  color: #fff;
+}
+
+

@@ -1,0 +1,124 @@
+.Sidebar {
+  height: 100%;
+  width: 100%;
+  max-width: 70px;
+  list-style-type: none;
+  padding: 0;
+  background: #d33333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Sidebar ul {
+  padding: 0;
+}
+
+
+.NavigationItems li {
+  flex-grow: 1;
+}
+
+.NavigationItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.NavigationItem li {
+  flex-grow: 1;
+}
+
+.NavigationItem ul {
+  list-style-type: none;
+}
+
+.Icon {
+  color: #cfcfcf;
+}
+
+.NavigationItem a{
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.SubNavigateItem {
+  display: none;
+}
+
+.NavigationItem:hover .Icon {
+  color: #fff;
+}
+
+.NavigationItem:hover .SubNavigateItem {
+  display: inline-block;
+  position: absolute;
+}
+
+
+
+.NavigationItem a.active {
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  border: 5px solid #fff;
+}
+
+.NavigationItem a.active .Icon {
+  color: #d33333;
+}
+
+.SubNavigateItem {
+  background: #fff;
+  margin-top: 10px;
+  padding: 0;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+.NavigationItemLv2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.NavigationItemLv2 li {
+  flex-grow: 1;
+}
+
+.NavigationItemLv2 a {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  color: #333;
+}
+
+.Link {
+  padding-left: 20px;
+  display: flex;
+}
+
+.LabelLv2 {
+  font-size: 14px;
+  min-width: 100px;
+  padding: 20px 0;
+}
+
+.NavigationItemLv2 a:hover {
+  color: #d33333;
+  transition: all .3s ease-in;
+}
+
+
+
+.Label {
+  font-weight: bold;
+  padding: 20px 15px;
+  display: block;
+  min-width: 150px;
+}
+
+
+

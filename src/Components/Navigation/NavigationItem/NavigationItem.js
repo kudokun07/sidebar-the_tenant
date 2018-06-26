@@ -1,30 +1,44 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { Icon } from 'react-icons-kit'
 import { NavLink } from 'react-router-dom'
 
-import classes from './IconItem.css'
+import iconStyle from '../Sidebar/IconSidebar.css'
+import drawerStyle from '../Sidebar/DrawerSidebar.css'
 
 
-const NavigationItem = (props) => (
-  <li className={classes.NavigationItem}>
-    <NavLink
-      to={props.link}
-      exact={props.exact}
-      activeClassName={classes.active}
-    >
-      <div className={classes.Icon}>
-        <Icon size={'30'} icon={props.icon}/>
+const NavigationItem = (props, context) => {
+  const styles = context.sidebarType ? drawerStyle : iconStyle
+  return (
+    <li className={styles.NavigationItem}>
+      <NavLink
+        to={props.link}
+        exact={props.exact}
+        activeClassName={styles.active}
+      >
+        <div className={styles.Icon}>
+          <Icon size={'30'} icon={props.icon}/>
+        </div>
+        {
+          context.sidebarType && <span className={styles.Label}>{props.label}</span>
+        }
+      </NavLink>
+      <div>
+        <ul className={styles.SubNavigateItem}>
+          {
+            !context.sidebarType && <li className={styles.Label}>{props.label}</li>
+          }
+
+          {props.children}
+        </ul>
       </div>
-    </NavLink>
-    <div>
-      <ul className={classes.SubNavigateItem}>
-        <li className={classes.Label}>
-          {props.label}
-        </li>
-        {props.children}
-      </ul>
-    </div>
-  </li>
-)
+    </li>
+  )
+}
+
+NavigationItem.contextTypes = {
+  sidebarType: PropTypes.bool
+}
 
 export default NavigationItem

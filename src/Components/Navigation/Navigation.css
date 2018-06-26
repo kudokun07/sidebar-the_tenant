@@ -1,4 +1,6 @@
 .Navigation {
+  padding: 0;
+  margin: 0;
   position: fixed;
   height: 100vh;
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { starO } from 'react-icons-kit/fa/starO'
 import { buildingO } from 'react-icons-kit/fa/buildingO'
 import { addressBookO } from 'react-icons-kit/fa/addressBookO'
@@ -15,15 +17,17 @@ import NavigationItem from '../NavigationItem/NavigationItem'
 
 import NavigationItemLv2 from '../NavigationItem/NavigationItemLv2/NavigationItemLv2'
 
-import classes from './Sidebar.css'
+import iconStyle from './IconSidebar.css'
+import drawerStyle from './DrawerSidebar.css'
 import UserIcon from '../UserIcon/UserIcon';
 import Logo from '../../Logo/Logo';
 
-const IconSidebar = (props) => {
+const Sidebar = (props, context) => {
+  const styles = context.sidebarType ? drawerStyle : iconStyle
   return (
-    <div className={classes.IconSidebar}>
+    <div className={styles.Sidebar}>
       <Logo className="IconBarLogo"/>
-      <ul className={classes.NavigationItems}>
+      <ul className={styles.NavigationItems}>
         <NavigationItem
           link="/"
           exact
@@ -35,6 +39,7 @@ const IconSidebar = (props) => {
           link="/organization"
           icon={buildingO}
           label="Organization"
+          exact={context.sidebarType ? true : false}
         >
           <NavigationItemLv2
             link="/organization/general-info"
@@ -78,4 +83,9 @@ const IconSidebar = (props) => {
   )
 }
 
-export default IconSidebar
+
+Sidebar.contextTypes = {
+  sidebarType: PropTypes.bool
+}
+
+export default Sidebar

@@ -1,18 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component }  from 'react'
+import PropTypes from 'prop-types'
+
 
 import Sidebar from './Sidebar/Sidebar'
 
 import classes from './Navigation.css'
 
 class Navigation extends Component {
-  state = {
-    version: false,
+  static childContextTypes = {
+    sidebarType: PropTypes.bool 
   }
+  getChildContext() {
+    return (
+      { 
+        sidebarType: this.getSidebarType()
+      }
+    )
+  }
+
+  getSidebarType = () => {
+    return this.props.type
+  }
+
   render() {
-    const { version } = this.state
     return (
       <div className={classes.Navigation}>
-        <Sidebar version={version}/>
+        <Sidebar/>
       </div> 
     );
   }

@@ -1,24 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { Icon } from 'react-icons-kit'
 
-import classes from './IconItemLv2.css'
+import iconStyle from '../../Sidebar/IconSidebar.css'
+import drawerStyle from '../../Sidebar/DrawerSidebar.css'
 
-const NavigationItemLv2 = (props) => {
+const NavigationItemLv2 = (props, context) => {
+  const styles = context.sidebarType ? drawerStyle : iconStyle
   return (
-    <li className={classes.NavigationItemLv2}>
+    <li className={styles.NavigationItemLv2}>
       <NavLink
        to={props.link}
        exact={props.exact}
-       activeClassName={classes.active}
+       activeClassName={styles.active}
       >
-        <div className={classes.Link}>
+        <div className={styles.Link}>
           <Icon size={'24'} icon={props.icon}/>
-          <span className={classes.Label}>{props.label}</span>
+          <span className={styles.LabelLv2}>{props.label}</span>
         </div>
       </NavLink>
     </li>
   )
+}
+
+NavigationItemLv2.contextTypes = {
+  sidebarType: PropTypes.bool
 }
 
 export default NavigationItemLv2
