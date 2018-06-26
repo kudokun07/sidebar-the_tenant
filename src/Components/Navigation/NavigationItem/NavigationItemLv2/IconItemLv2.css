@@ -1,0 +1,31 @@
+.NavigationItemLv2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.NavigationItemLv2 li {
+  flex-grow: 1;
+}
+
+.NavigationItemLv2 a {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  color: #333;
+}
+
+.Link {
+  padding-left: 20px;
+  display: flex;
+}
+
+.Label {
+  font-size: 14px;
+  min-width: 100px;
+  padding: 10px 0;
+}
+
+.NavigationItemLv2 a:hover {
+  color: #d33333;
+}
+
