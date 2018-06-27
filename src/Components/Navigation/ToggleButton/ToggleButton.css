@@ -4,16 +4,57 @@
   color: #fff;
   padding: 10px 0;
   left: 50px;
-  bottom: 20px;
+  bottom: 7px;
   transition: .3s ease all;
+  animation: showToggleButtonIconStyle .5s ease; 
 }
 
-
-
 .DrawerStyle {
-  color: #cfcfcf;
+  color: #d33333;
   display: block;
   position: absolute;
   left: 230px;
-  bottom: 20px;
+  bottom: 7px;
+  transition: .3s ease all;
+  animation: showToggleButtonDrawerStyle .5s ease;
+}
+
+@keyframes showToggleButtonIconStyle {
+  0% {
+    opacity: 0;
+    left: 30px;
+    color: #9f311d;
+  }
+  25% {
+    left: 60px;
+  }
+  50% {
+    left: 40px;
+  }
+  75% {
+    left: 55px;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes showToggleButtonDrawerStyle {
+  0% {
+    color: #d33333;
+    left: 200px;
+    opacity: 0;
+  }
+  25% {
+    left: 240px;
+  }
+  50% {
+    left: 220px;
+  }
+  75% {
+    left: 235px;
+  }
+  100% {
+    opacity: 100;
+  }
 }

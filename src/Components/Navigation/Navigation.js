@@ -7,6 +7,10 @@ import Sidebar from './Sidebar/Sidebar'
 import classes from './Navigation.css'
 
 class Navigation extends Component {
+  state = {
+    isHover: false
+  }
+
   static childContextTypes = {
     sidebarType: PropTypes.bool 
   }
@@ -22,10 +26,26 @@ class Navigation extends Component {
     return this.props.type
   }
 
+  onMouseEnterHandler = () => {
+    this.setState({
+      isHover: true
+    })
+  }
+
+  onMouseLeaveHandler = () => {
+    this.setState({
+      isHover: false
+    })
+  }
+
   render() {
     return (
-      <div className={classes.Navigation} onMouseOver={this.props.onHover}>
-        <Sidebar toggleClick={this.props.toggleClick}/>
+      <div 
+        className={classes.Navigation} 
+        onMouseEnter={this.onMouseEnterHandler}
+        onMouseLeave={this.onMouseLeaveHandler}
+      >
+        <Sidebar toggleClick={this.props.toggleClick} isHover={this.state.isHover}/>
       </div> 
     );
   }

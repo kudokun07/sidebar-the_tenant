@@ -14,7 +14,7 @@ const Logo = (props) => {
       <div className={classes.Logo}>
         <Icon size={'40'} icon={xing}/>
       </div>
-      <span className={classes.Brand}>TheXernant</span>
+      <span className={classes.Brand}>TheXenant</span>
     </div>
   )
 }

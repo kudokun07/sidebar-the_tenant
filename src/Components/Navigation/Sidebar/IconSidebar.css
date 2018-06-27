@@ -1,4 +1,9 @@
 .Sidebar {
+  position: fixed;
+  left: 50px;
+}
+
+.Sidebar {
   height: 100%;
   width: 100%;
   max-width: 70px;
@@ -8,9 +13,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  transition: .3s linear all;
+  justify-content: space-between;
+  transition: .3s ease all;
+  left: 0;
 }
+
+
 
 .Sidebar ul {
   padding: 0;
@@ -18,6 +26,7 @@
 
 .NavigationItems {
   overflow: auto;
+  flex: 1 1 0;
 }
 
 .NavigationItems::-webkit-scrollbar {

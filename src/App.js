@@ -4,7 +4,7 @@ import Navigation from './Components/Navigation/Navigation';
 
 class App extends Component {
   state = {
-    sidebarType: true
+    sidebarType: false
   }
 
   onClickHandler = () => {

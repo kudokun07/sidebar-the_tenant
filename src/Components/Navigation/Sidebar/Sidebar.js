@@ -86,7 +86,11 @@ const Sidebar = (props, context) => {
         : 
         <UserIcon userName="Shin"/>
       }
-      <ToggleButton expand={context.sidebarType} toggleClick={props.toggleClick}/>
+      {
+        props.isHover &&
+        <ToggleButton expand={context.sidebarType} toggleClick={props.toggleClick}/>
+      }
+      
       
     </div>
   )
