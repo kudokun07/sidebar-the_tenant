@@ -8,7 +8,16 @@ import classes from './Navigation.css'
 
 class Navigation extends Component {
   state = {
-    isHover: false
+    isHover: false,
+    sidebarType: false
+  }
+
+  onClickHandler = () => {
+    const {sidebarType, isHover} = this.state
+    this.setState({
+      sidebarType: !sidebarType,
+      isHover: sidebarType ? false : isHover
+    })
   }
 
   static childContextTypes = {
@@ -23,7 +32,7 @@ class Navigation extends Component {
   }
 
   getSidebarType = () => {
-    return this.props.type
+    return this.state.sidebarType
   }
 
   onMouseEnterHandler = () => {
@@ -38,6 +47,14 @@ class Navigation extends Component {
     })
   }
 
+  componentWillUpdate() {
+    console.log('[componentWillUpdate]')
+  }
+
+  componentDidUpdate() {
+    console.log('[componentDidUpdate]')
+  }
+
   render() {
     return (
       <div 
@@ -45,7 +62,7 @@ class Navigation extends Component {
         onMouseEnter={this.onMouseEnterHandler}
         onMouseLeave={this.onMouseLeaveHandler}
       >
-        <Sidebar toggleClick={this.props.toggleClick} isHover={this.state.isHover}/>
+        <Sidebar toggleClick={this.onClickHandler} isHover={this.state.isHover}/>
       </div> 
     );
   }

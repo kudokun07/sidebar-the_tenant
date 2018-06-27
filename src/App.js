@@ -3,26 +3,21 @@ import classes from './App.css'
 import Navigation from './Components/Navigation/Navigation';
 
 class App extends Component {
-  state = {
-    sidebarType: false
+  
+
+  componentWillMount() {
+    console.log('App.js [componentWillMount]')
   }
 
-  onClickHandler = () => {
-    const {sidebarType} = this.state
-    this.setState({
-      sidebarType: !sidebarType
-    })
+  componentDidUpdate() {
+    console.log('App.js [ComponentDidUpdate]')
   }
 
 
   render() {
-    const {sidebarType} = this.state
     return (
       <div className={classes.App}>
-        <Navigation 
-          type={sidebarType} 
-          toggleClick={this.onClickHandler}
-        />
+        <Navigation />
       </div>
     );
   }
