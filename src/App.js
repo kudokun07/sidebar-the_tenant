@@ -7,11 +7,22 @@ class App extends Component {
     sidebarType: true
   }
 
+  onClickHandler = () => {
+    const {sidebarType} = this.state
+    this.setState({
+      sidebarType: !sidebarType
+    })
+  }
+
+
   render() {
     const {sidebarType} = this.state
     return (
       <div className={classes.App}>
-        <Navigation type={sidebarType}/>
+        <Navigation 
+          type={sidebarType} 
+          toggleClick={this.onClickHandler}
+        />
       </div>
     );
   }

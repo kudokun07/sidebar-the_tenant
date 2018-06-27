@@ -1,8 +1,29 @@
-.IconBarLogo {
-
+.IconBarLogo .Logo {
   padding: 10px;
   text-align: center;
-  
   color: #fff;
   text-shadow: 3px 3px 25px #fff;
+}
+
+.IconBarLogo .Brand {
+  display: none;
+}
+
+.DrawerBarLogo {
+  display: flex;
+  padding: 20px;
+  margin-left: 0;
+}
+
+.DrawerBarLogo .Logo {
+  color: #d33333;
+  display: block;
+  padding: 10px;
+}
+
+.DrawerBarLogo .Brand {
+  display: block;
+  padding: 15px 0px;
+  font-size: 24px;
+  font-weight: 500;
 }

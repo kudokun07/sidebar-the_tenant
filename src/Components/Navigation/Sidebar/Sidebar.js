@@ -13,6 +13,8 @@ import {tree} from 'react-icons-kit/icomoon/tree'
 
 
 
+
+
 import NavigationItem from '../NavigationItem/NavigationItem'
 
 import NavigationItemLv2 from '../NavigationItem/NavigationItemLv2/NavigationItemLv2'
@@ -21,12 +23,13 @@ import iconStyle from './IconSidebar.css'
 import drawerStyle from './DrawerSidebar.css'
 import UserIcon from '../UserIcon/UserIcon';
 import Logo from '../../Logo/Logo';
+import ToggleButton from '../ToggleButton/ToggleButton';
 
 const Sidebar = (props, context) => {
   const styles = context.sidebarType ? drawerStyle : iconStyle
   return (
     <div className={styles.Sidebar}>
-      <Logo className="IconBarLogo"/>
+      <Logo className={context.sidebarType ? "DrawerBarLogo" : "IconBarLogo"}/>
       <ul className={styles.NavigationItems}>
         <NavigationItem
           link="/"
@@ -78,7 +81,13 @@ const Sidebar = (props, context) => {
           label="Admin Tenant"
         ></NavigationItem>
       </ul>
-      <UserIcon userName="Shin"/>
+      {context.sidebarType ? 
+        <p className={styles.Version}>Saturn v0.1a</p> 
+        : 
+        <UserIcon userName="Shin"/>
+      }
+      <ToggleButton expand={context.sidebarType} toggleClick={props.toggleClick}/>
+      
     </div>
   )
 }

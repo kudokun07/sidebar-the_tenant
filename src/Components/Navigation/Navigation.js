@@ -24,8 +24,8 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div className={classes.Navigation}>
-        <Sidebar/>
+      <div className={classes.Navigation} onMouseOver={this.props.onHover}>
+        <Sidebar toggleClick={this.props.toggleClick}/>
       </div> 
     );
   }

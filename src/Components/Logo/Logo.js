@@ -11,7 +11,10 @@ const Logo = (props) => {
   const classLogo = classes[Object.keys(classes).find(val => val === props.className)]
   return (
     <div className={classLogo}>
-      <Icon size={'30'} icon={xing}/>
+      <div className={classes.Logo}>
+        <Icon size={'40'} icon={xing}/>
+      </div>
+      <span className={classes.Brand}>TheXernant</span>
     </div>
   )
 }
