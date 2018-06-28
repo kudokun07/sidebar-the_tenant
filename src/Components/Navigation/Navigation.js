@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Sidebar from './Sidebar/Sidebar'
 
 import classes from './Navigation.css'
+import Topbar from './Topbar/Topbar';
 
 class Navigation extends Component {
   state = {
@@ -62,6 +63,12 @@ class Navigation extends Component {
         onMouseEnter={this.onMouseEnterHandler}
         onMouseLeave={this.onMouseLeaveHandler}
       >
+        <Topbar 
+          toggleClick={this.onClickHandler}
+          parent="organization" 
+          child="Org Structure" 
+          userName="Shin"
+        />
         <Sidebar toggleClick={this.onClickHandler} isHover={this.state.isHover}/>
       </div> 
     );
