@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 import { Icon } from 'react-icons-kit'
@@ -8,37 +8,62 @@ import iconStyle from '../Sidebar/IconSidebar.css'
 import drawerStyle from '../Sidebar/DrawerSidebar.css'
 
 
-const NavigationItem = (props, context) => {
-  const styles = context.sidebarType ? drawerStyle : iconStyle
-  return (
-    <li className={styles.NavigationItem}>
-      <NavLink
-        to={props.link}
-        exact={props.exact}
-        activeClassName={styles.active}
+class NavigationItem extends Component {
+  static contextTypes = {
+    sidebarType: PropTypes.bool
+  }
+
+  state= {
+    isActived: false
+  }
+
+  mouseEnterHandler = () => {
+    this.setState({
+      isActived: true
+    })
+  }
+
+  mouseLeaveHandler = () => {
+    this.setState({
+      isActived: false
+    })
+  }
+
+
+  render() {
+    const { isActived } = this.state
+    const styles = this.context.sidebarType ? drawerStyle : iconStyle
+    return (
+      <li 
+        className={styles.NavigationItem} 
+        onMouseEnter={this.mouseEnterHandler}
+        onMouseLeave={this.mouseLeaveHandler}
       >
-        <div className={styles.Icon}>
-          <Icon size={'30'} icon={props.icon}/>
-        </div>
-        {
-          context.sidebarType && <span className={styles.Label}>{props.label}</span>
-        }
-      </NavLink>
-      <div>
-        <ul className={styles.SubNavigateItem}>
+        <NavLink
+          to={this.props.link}
+          exact={this.props.exact}
+          activeClassName={styles.active}
+        >
+          <div className={styles.Icon}>
+            <Icon size={'30'} icon={this.props.icon}/>
+          </div>
           {
-            !context.sidebarType && <li className={styles.Label}>{props.label}</li>
+            this.context.sidebarType && <span className={styles.Label}>{this.props.label}</span>
           }
-
-          {props.children}
-        </ul>
-      </div>
-    </li>
-  )
+        </NavLink>
+        <div className={isActived ? styles.active : ""}>
+          <ul className={styles.SubNavigateItem}>
+            {
+              !this.context.sidebarType && <li className={styles.Label}>{this.props.label}</li>
+            }
+            
+            {this.props.children}
+          </ul>
+        </div>
+      </li>
+    )
+  }
 }
 
-NavigationItem.contextTypes = {
-  sidebarType: PropTypes.bool
-}
 
 export default NavigationItem

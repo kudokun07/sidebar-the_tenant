@@ -14,16 +14,18 @@ import classes from './Topbar.css'
 
 
 const Topbar = (props, context) => {
+  
   const toggleStyle = context.sidebarType ? 
-                      [classes.Bar1, classes.Bar2, classes.Bar3].map(
-                        style => [style, classes.toggle].join(' ')
-                      )
+                      [classes.AnimateToggle, classes.toggle].join(' ')
                       :
-                      [classes.Bar1, classes.Bar2, classes.Bar3]
+                      classes.AnimateToggle    
+  console.log(toggleStyle)
   return (
-    <div className={classes.Topbar} onClick={props.toggleClick}>
-      <div className={classes.AnimateToggle}>
-        {toggleStyle.map(style => <div className={style}></div>)}
+    <div className={classes.Topbar} >
+      <div className={toggleStyle} onClick={props.toggleClick}>
+        <div className={classes.Bar1}></div>
+        <div className={classes.Bar2}></div>
+        <div className={classes.Bar3}></div>  
       </div>
 
       <div className={classes.Header}>

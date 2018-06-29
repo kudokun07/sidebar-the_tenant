@@ -1,10 +1,11 @@
 .Sidebar {
   display: none;
+  left: -100px;
 }
 
 
 
-@media screen and (min-width: 768px) { /* Desktop */
+@media screen and (min-width: 769px) { /* Desktop */
   .Sidebar {
     position: fixed;
     left: 50px;

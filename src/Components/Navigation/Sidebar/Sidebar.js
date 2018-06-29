@@ -28,7 +28,11 @@ import ToggleButton from '../ToggleButton/ToggleButton';
 const Sidebar = (props, context) => {
   const styles = context.sidebarType ? drawerStyle : iconStyle
   return (
-    <div className={styles.Sidebar}>
+    <div 
+      className={styles.Sidebar} 
+      onMouseEnter={props.mouseEnter}
+      onMouseLeave={props.mouseLeave}
+    >
       <Logo className={context.sidebarType ? "DrawerBarLogo" : "IconBarLogo"}/>
       <ul className={styles.NavigationItems}>
         <NavigationItem

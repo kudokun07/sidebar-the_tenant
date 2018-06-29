@@ -1,22 +1,28 @@
-.IconStyle {
-  display: block;
-  position: absolute;
-  color: #fff;
-  padding: 10px 0;
-  left: 50px;
-  bottom: 7px;
-  transition: .3s ease all;
-  animation: showToggleButtonIconStyle .5s ease; 
+.DrawerStyle {
+  display: none;
 }
 
-.DrawerStyle {
-  color: #d33333;
-  display: block;
-  position: absolute;
-  left: 230px;
-  bottom: 7px;
-  transition: .3s ease all;
-  animation: showToggleButtonDrawerStyle .5s ease;
+@media screen and (min-width: 769px) {
+  .IconStyle {
+    display: block;
+    position: absolute;
+    color: #fff;
+    padding: 10px 0;
+    left: 50px;
+    bottom: 7px;
+    transition: .3s ease all;
+    animation: showToggleButtonIconStyle .5s ease; 
+  }
+  
+  .DrawerStyle {
+    color: #d33333;
+    display: block;
+    position: absolute;
+    left: 230px;
+    bottom: 7px;
+    transition: .3s ease all;
+    animation: showToggleButtonDrawerStyle .5s ease;
+  }
 }
 
 @keyframes showToggleButtonIconStyle {

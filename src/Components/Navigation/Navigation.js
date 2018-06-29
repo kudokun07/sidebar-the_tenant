@@ -10,7 +10,7 @@ import Topbar from './Topbar/Topbar';
 class Navigation extends Component {
   state = {
     isHover: false,
-    sidebarType: false
+    sidebarType: true
   }
 
   onClickHandler = () => {
@@ -60,8 +60,6 @@ class Navigation extends Component {
     return (
       <div 
         className={classes.Navigation} 
-        onMouseEnter={this.onMouseEnterHandler}
-        onMouseLeave={this.onMouseLeaveHandler}
       >
         <Topbar 
           toggleClick={this.onClickHandler}
@@ -69,7 +67,12 @@ class Navigation extends Component {
           child="Org Structure" 
           userName="Shin"
         />
-        <Sidebar toggleClick={this.onClickHandler} isHover={this.state.isHover}/>
+        <Sidebar 
+          toggleClick={this.onClickHandler} 
+          isHover={this.state.isHover}
+          mouseEnter={this.onMouseEnterHandler}
+          mouseLeave={this.onMouseLeaveHandler}
+        />
       </div> 
     );
   }

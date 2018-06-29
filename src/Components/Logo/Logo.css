@@ -12,7 +12,9 @@
 .DrawerBarLogo {
   display: flex;
   padding: 20px;
-  margin-left: 0;
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
 }
 
 .DrawerBarLogo .Logo {
@@ -22,8 +24,32 @@
 }
 
 .DrawerBarLogo .Brand {
+  color: #00000062;
   display: block;
   padding: 15px 0px;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+
+@media screen and (min-width: 769px) {
+  .DrawerBarLogo {
+    display: flex;
+    padding: 20px;
+    margin-left: 0;
+    position: static;
+  }
+  
+  .DrawerBarLogo .Logo {
+    color: #d33333;
+    display: block;
+    padding: 10px;
+  }
+  
+  .DrawerBarLogo .Brand {
+    display: block;
+    padding: 15px 0px;
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
