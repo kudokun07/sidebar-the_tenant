@@ -1,6 +1,7 @@
 {
   "name": "sidebar-the_tenant",
   "version": "0.1.0",
+  "homepage": "https://kudokun07.github.io/sidebar-app",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -48,6 +49,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
@@ -93,5 +96,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
